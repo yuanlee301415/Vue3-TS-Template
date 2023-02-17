@@ -83,7 +83,7 @@ watch(
       }
       dd {
         display: none;
-        width: 100px;
+        width: 140px;
         padding: 5px 0;
         background-color: #fbfbfb;
         border-radius: 5px;
@@ -91,7 +91,11 @@ watch(
         top: 40px;
         a {
           display: block;
-          line-height: 26px;
+          line-height: 2em;
+          height: 2em;
+          overflow: hidden;
+          white-space: normal;
+          text-overflow: ellipsis;
           text-indent: 10px;
           text-decoration: none;
           &:hover {
