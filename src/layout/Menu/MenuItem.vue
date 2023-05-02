@@ -5,7 +5,7 @@
     :style="{ textIndent: depth + 'em' }"
   >
     <template v-if="item.children && item.meta.hiddenChildrenInMenu !== true">
-      <dt @click="handleToggleOpen">
+      <dt :title="item.meta.title" @click="handleToggleOpen">
         <span>{{ item.meta.title }}</span
         ><i />
       </dt>
@@ -20,7 +20,7 @@
       </dd>
     </template>
     <template v-else>
-      <dt>
+      <dt :title="item.meta.title">
         <router-link :to="{ name: item.name }">{{ item.meta.title }}</router-link>
       </dt>
     </template>
