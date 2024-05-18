@@ -10,9 +10,7 @@
 
         <RouterView v-slot="{ Component, route }">
           <transition name="fade-slide" mode="out-in">
-            <div class="content">
-              <component :is="Component" :key="route.path" />
-            </div>
+            <component :is="Component" :key="route.path" />
           </transition>
         </RouterView>
       </div>
