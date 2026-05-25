@@ -22,7 +22,4 @@ interface ImportMetaEnv {
 
   // APP Title
   readonly VITE_APP_TITLE: string;
-
-  // 是否检查用户权限
-  readonly VITE_PERMISSION: string;
 }
