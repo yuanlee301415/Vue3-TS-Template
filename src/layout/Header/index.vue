@@ -5,18 +5,16 @@
     </div>
 
     <div class="headerRight">
-      <span v-if="userInfo.userName">{{ userInfo.userName }}({{ userInfo.realName }})</span>
+      <span v-if="userStore.info">{{ userStore.info.name }}[{{ userStore.info.name }}]</span>
     </div>
   </header>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useUserStore } from '@/store/modules/user'
 
 const title = import.meta.env.VITE_APP_TITLE
 const userStore = useUserStore()
-const userInfo = computed(() => userStore.getUserInfo)
 </script>
 
 <style scoped lang="less">
