@@ -7,6 +7,7 @@
     "start": "npm run dev",
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "build:test": "vite build --mode test",
     "preview": "npm run build && vite preview",
     "preview:dist": "vite preview",
     "lint": "eslint ./src --fix --cache",
