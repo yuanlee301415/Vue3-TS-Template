@@ -1,18 +1,16 @@
 import type { UserConfig, ConfigEnv } from "vite";
 
 import { fileURLToPath, URL } from "node:url";
+import { cwd } from 'node:process'
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import { createHtmlPlugin } from "vite-plugin-html";
 
 // @ts-ignore
 import pkg from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
-  const root = process.cwd();
-  const env = loadEnv(mode, root);
+  const env = loadEnv(mode, cwd()) as unknown as ImportMetaEnv
   const {
     VITE_PORT,
     VITE_INTERNAL_VERSION,
@@ -33,18 +31,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       vue(),
-      vueJsx(),
-      createHtmlPlugin({
-        entry: "src/main.ts",
-        minify: true,
-        inject: {
-          data: {
-            version: __APP_VERSION__,
-            time: __APP_BUILD_TIME__,
-            mode,
-          },
-        },
-      }),
     ],
     resolve: {
       alias: {
