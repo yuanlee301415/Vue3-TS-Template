@@ -6,7 +6,7 @@
   </aside>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Menu from '@/layout/modules/Menu/index.vue'
 
 defineOptions({ name: 'LayoutSide' })

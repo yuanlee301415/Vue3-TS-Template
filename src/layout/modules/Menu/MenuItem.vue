@@ -6,8 +6,7 @@
   >
     <template v-if="item.children && item.meta.hiddenChildrenInMenu !== true">
       <dt @click="handleToggleOpen">
-        <span>{{ item.meta.title }}</span
-        ><i />
+        <span>{{ item.meta.title }}</span><i />
       </dt>
       <dd>
         <MenuItem
@@ -21,21 +20,23 @@
     </template>
     <template v-else>
       <dt>
-        <router-link :to="{ path: item.path }">{{ item.meta.title }}</router-link>
+        <router-link :to="{ name: item.name }">{{ item.meta.title }}</router-link>
       </dt>
     </template>
   </dl>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { AppRouteRecordRaw } from '@/router/types.ts'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-const props = defineProps({
-  item: Object,
-  depth: Number,
-  fullPath: String,
-})
+const props = defineProps<{
+  item: AppRouteRecordRaw,
+  depth: number,
+  fullPath: string,
+}>()
+
 const route = useRoute()
 const open = ref(false)
 

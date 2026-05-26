@@ -9,7 +9,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import LayoutSide from './modules/LayoutSide/index.vue'
 import LayoutHeader from './modules/LayoutHeader/index.vue'
 import LayoutMain from './modules/LayoutMain/index.vue'

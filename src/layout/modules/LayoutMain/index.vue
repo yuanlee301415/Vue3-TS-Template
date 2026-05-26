@@ -8,7 +8,7 @@
   </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineOptions({ name: 'LayoutMain' })
 </script>
 

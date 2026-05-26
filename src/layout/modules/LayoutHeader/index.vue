@@ -6,14 +6,14 @@
         <h2>{{ VITE_APP_TITLE }}</h2>
       </div>
     </div>
-    <div class="header-right">
-      <span v-if="info">{{ info.name }}</span>
+    <div v-if="info" class="header-right">
+      <span>{{ info.name }}</span>
       <span v-if="info.roles">[{{ info.roles[0] }}]</span>
     </div>
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { useUserStore } from '@/store/modules/user'
 
