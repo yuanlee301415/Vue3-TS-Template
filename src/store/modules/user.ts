@@ -4,7 +4,7 @@ import { store } from '@/store'
 import User from '@/models/User.ts'
 
 export const useUserStore = defineStore('userStore', () => {
-  const info = ref<User|null>(null)
+  const info = ref<User | null>(null)
   const token = ref('')
   const lastUpdateTime = ref<number>()
 

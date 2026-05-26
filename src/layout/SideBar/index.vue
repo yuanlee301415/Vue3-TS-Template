@@ -9,8 +9,7 @@
 <script lang="ts" setup>
 import Menu from '../Menu/index.vue'
 
-defineOptions({ name: 'LayoutSideBar'})
-
+defineOptions({ name: 'LayoutSideBar' })
 </script>
 
 <style scoped lang="less">

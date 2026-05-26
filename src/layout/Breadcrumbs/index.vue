@@ -7,12 +7,7 @@
           ><span>/</span>
         </dt>
         <dd>
-          <router-link
-            v-for="child of item.children"
-            :key="child.name"
-            :to="{ name: child.name }"
-            >{{ child.meta?.title }}</router-link
-          >
+          <router-link v-for="child of item.children" :key="child.name" :to="{ name: child.name }">{{ child.meta?.title }}</router-link>
         </dd>
       </dl>
       <span v-else>{{ item.meta?.title }}</span>
@@ -26,7 +21,7 @@ import type { RouteRecordNormalized } from 'vue-router'
 import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
 
-defineOptions({ name: 'LayoutBreadcrumbs'})
+defineOptions({ name: 'LayoutBreadcrumbs' })
 
 const route = useRoute()
 const matched = ref<RouteRecordNormalized[]>()
@@ -36,7 +31,7 @@ watch(
   () => {
     matched.value = route.matched
   },
-  { immediate: true }
+  { immediate: true },
 )
 </script>
 

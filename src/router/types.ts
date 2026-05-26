@@ -1,10 +1,7 @@
 import type { RouteMeta, RouteRecordRaw } from 'vue-router'
 import type { DefineComponent } from 'vue'
 
-export type Component<T = unknown> =
-  | DefineComponent
-  | (() => Promise<typeof import('*.vue')>)
-  | (() => Promise<T>)
+export type Component<T = unknown> = DefineComponent | (() => Promise<typeof import('*.vue')>) | (() => Promise<T>)
 
 type _RouteMeta = Partial<{
   title: string

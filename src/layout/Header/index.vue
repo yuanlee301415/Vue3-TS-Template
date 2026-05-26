@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import { useUserStore } from '@/store/modules/user'
 
-defineOptions({ name: 'LayoutHeader'})
+defineOptions({ name: 'LayoutHeader' })
 
 const title = import.meta.env.VITE_APP_TITLE
 const userStore = useUserStore()
