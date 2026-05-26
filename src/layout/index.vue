@@ -1,27 +1,42 @@
 <template>
-  <section class="layout">
-    <LayoutHeader />
+  <section class="layout-container">
+    <LayoutSide class="side" />
 
-    <main>
-      <LayoutSideBar />
-
-      <div class="container">
-        <LayoutBreadcrumbs />
-
-        <RouterView v-slot="{ Component, route }">
-          <transition name="fade-slide" mode="out-in">
-            <component :is="Component" :key="route.path" />
-          </transition>
-        </RouterView>
-      </div>
-    </main>
+    <section class="main-container">
+      <LayoutHeader />
+      <LayoutMain />
+    </section>
   </section>
 </template>
 
-<script lang="ts" setup>
-import LayoutHeader from './Header/index.vue'
-import LayoutSideBar from './SideBar/index.vue'
-import LayoutBreadcrumbs from './Breadcrumbs/index.vue'
+<script setup>
+import LayoutSide from './modules/LayoutSide/index.vue'
+import LayoutHeader from './modules/LayoutHeader/index.vue'
+import LayoutMain from './modules/LayoutMain/index.vue'
 
-defineOptions({ name: 'LayoutComponent' })
+defineOptions({ name: 'LayoutContainer' })
 </script>
+
+<style scoped lang="less">
+@sideWidth: 210px;
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .side {
+    position: fixed;
+    width: @sideWidth;
+    height: 100vh;
+  }
+  .main-container {
+    height: 100%;
+    margin-left: @sideWidth;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
+</style>

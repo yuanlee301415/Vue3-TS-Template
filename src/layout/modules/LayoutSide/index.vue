@@ -6,15 +6,15 @@
   </aside>
 </template>
 
-<script lang="ts" setup>
-import Menu from '../Menu/index.vue'
+<script setup>
+import Menu from '@/layout/modules/Menu/index.vue'
 
-defineOptions({ name: 'LayoutSideBar' })
+defineOptions({ name: 'LayoutSide' })
 </script>
 
 <style scoped lang="less">
 nav {
-  height: 100%;
+  margin: 10px 0;
   overflow-y: auto;
   user-select: none;
 }
