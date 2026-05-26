@@ -32,6 +32,14 @@ export default defineConfig([
       'vue/multi-word-component-names': 'off', // 关闭多单词组件名限制
     },
   },
+  {
+    rules: {
+      // 允许接口通过 extends 继承单个父类型
+      '@typescript-eslint/no-empty-object-type': ['error', {
+        allowInterfaces: 'with-single-extends'
+      }],
+    },
+  },
   ...vueTsEslintConfig(),
   skipFormatting,
 ])
