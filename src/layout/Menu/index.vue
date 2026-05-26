@@ -11,5 +11,8 @@
 <script lang="ts" setup>
 import { basicRoutes } from '@/router/routes'
 import MenuItem from '@/layout/Menu/MenuItem.vue'
+
+defineOptions({ name: 'LayoutMenu'})
+
 // console.log('basicRoutes:', basicRoutes)
 </script>

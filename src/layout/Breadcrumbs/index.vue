@@ -26,6 +26,8 @@ import type { RouteRecordNormalized } from 'vue-router'
 import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
 
+defineOptions({ name: 'LayoutBreadcrumbs'})
+
 const route = useRoute()
 const matched = ref<RouteRecordNormalized[]>()
 

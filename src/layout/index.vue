@@ -22,4 +22,7 @@
 import LayoutHeader from './Header/index.vue'
 import LayoutSideBar from './SideBar/index.vue'
 import LayoutBreadcrumbs from './Breadcrumbs/index.vue'
+
+defineOptions({ name: 'LayoutComponent'})
+
 </script>
