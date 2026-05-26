@@ -26,6 +26,12 @@ export default defineConfig([
 
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
+  {
+    files: ['src/views/**/*.vue'], // 匹配 views 目录下的所有 .vue 文件
+    rules: {
+      'vue/multi-word-component-names': 'off', // 关闭多单词组件名限制
+    },
+  },
   ...vueTsEslintConfig(),
-  skipFormatting
+  skipFormatting,
 ])
